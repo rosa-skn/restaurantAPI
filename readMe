@@ -15,6 +15,8 @@ GET /items: Retrieve all items from the database
 POST /createitems: Add a new item by sending a JSON body with name, price, and description.
 PUT /updateitems: Update an existing item by sending a JSON body with id, name, price, and description.
 DELETE /delete/: Remove an item by specifying its id in the URL.
+i created 2 datatbases and linked them together, the first database is for the admin where the owner can add upload and delete items or products for the second 
+database named index2.js it's for the client where they will receive the information posted by the admin on their own server.
 
 
 

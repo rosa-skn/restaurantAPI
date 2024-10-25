@@ -1,0 +1,21 @@
+first open the MAMP application then click on "Start Servers" to ensure both Apache and MySQL are running. You should see green light
+
+C Open phpMyAdmin by clicking on the "Open WebStart page" in MAMP and selecting phpMyAdmin. Verify that your restaurantapi database is available and contains the tables (items, categories..)
+then open a terminal 
+Navigate to the directory where your API code is located using the cd command. For example:
+cd C:\Users\rosas\Downloads\restaurantAPI\index2.js
+and make sure you have npm installed you can do this by running
+npm install
+ Once it's are installed, you can start your API. use Nodemon by running
+nodemon index.js
+Your terminal should display a message indicating that the server is running on port 3000.
+ use Postman or your web browser to use the features
+
+GET /items: Retrieve all items from the database
+POST /createitems: Add a new item by sending a JSON body with name, price, and description.
+PUT /updateitems: Update an existing item by sending a JSON body with id, name, price, and description.
+DELETE /delete/: Remove an item by specifying its id in the URL.
+
+
+
+

@@ -47,7 +47,7 @@ app.get('/items', (req, res)=>{
      
      dataBase.query(sql, [name, price, description], (err, results) => {
          if (err) {
-            return res.status(500).json({ error: 'ERREUR DU SERVEUR', details: err.sqlMessage });
+            return res.status(500).json({ error: 'ERREUR DU SERVEUR'});
          } 
          return res.status(200).json(results);
      });
@@ -61,7 +61,7 @@ app.get('/items', (req, res)=>{
      
      dataBase.query(sql, [name, price, description, id], (err, results) => {
          if (err) {
-             return res.status(500).json({ error: 'ERREUR DU SERVEUR', details: err.sqlMessage });
+             return res.status(500).json({ error: 'ERREUR DU SERVEUR'});
          }
          return res.status(200).json({ message: 'Item updated' });
      });

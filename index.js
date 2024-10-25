@@ -39,11 +39,11 @@ app.get('/items', (req, res)=>{
 
 
 app.post('/createitems', (req, res) => {
-    const { name, price, id_category, description } = req.body;
+    const { name, price, description } = req.body;
 
-    const sql = 'INSERT INTO items (name, price, id_category, description) VALUES (?, ?, ?, ?)';
+    const sql = 'INSERT INTO items (name, price, description) VALUES (?, ?, ?, ?)';
     
-    dataBase.query(sql, [name, price, id_category, description], (err, results) => {
+    dataBase.query(sql, [name, price, description], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'ERREUR DU SERVEUR'});
         } 
@@ -55,11 +55,11 @@ app.post('/createitems', (req, res) => {
 app.put('/updateitems', (req, res) => {
     const { id, name, price, id_category, description } = req.body; 
 
-    const sql = 'UPDATE items SET name = ?, price = ?, id_category = ?, description = ? WHERE id = ?';
+    const sql = 'UPDATE items SET name = ?, price = ?, description = ? WHERE id = ?';
     
-    dataBase.query(sql, [name, price, id_category, description, id], (err, results) => {
+    dataBase.query(sql, [name, price, description, id], (err, results) => {
         if (err) {
-            return res.status(500).json({ error: 'ERREUR DU SERVEUR', details: err.sqlMessage });
+            return res.status(500).json({ error: 'ERREUR DU SERVEUR'});
         }
         return res.status(200).json({ message: 'Item updated' });
     });
